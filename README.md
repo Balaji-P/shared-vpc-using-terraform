@@ -1,18 +1,18 @@
 # Applying The Terraform Plan
-1. Requires a GCP user who has been delegated Compute Shared VPC Admin role.  
+1. Requires a GCP user assigned the Compute Shared VPC Admin role.  
 
 **Note** Service accounts cannot be assigned the Shared VPC Admin role.
 
-2. Compute API services need to be enabled for the host and service projects.  Terraform scripting of enabling services is problematic, it's better to use the gcloud cli instead.
+2. Enable the Compute API in both the host and service projects.  Enabling API service through Terraform is problematic. It's much easier to enable using gcloud instead.
 
-The commands below can be run in the google cloud shell, with appropriate permissions.
+Execute the following gcloud commands to enable the APIs. Appropriate permissions required.
 
 ```
 gcloud services enable compute.googleapis.com [--project project_id]
 gcloud services enable container.googleapis.com [--project project_id]
 ```
 
-3. Authenticate to GCP using the gcloud init command, providing the email address for the GCP user above with Compute Shared Admin permissions.
+3. Authenticate with GCP using the gcloud init command. Provide email address for the GCP user with Compute Shared Admin permissions.
 
 4. Amend the terraform.tfvars file accordingly.
 
