@@ -1,0 +1,43 @@
+region = "europe-west2"
+
+region_zone = "europe-west2-a"
+
+# Host Project ID
+host_project_id ="shared-vpc"
+
+# Service Projects IDs
+service_project_ids = ["dev-proj"]
+
+shared_vpc_name = "shared-network"
+
+gke_pod_network_name = "gke-pods"
+
+gke_service_network_name = "gke-services"
+
+standard_network_subnets = {
+  transit = "10.0.0.0/24",
+  operations = "10.0.1.0/24",
+  security =  "10.0.2.0/24"
+}
+
+gke_node_network_subnets = {
+  cicd = "10.0.3.0/24",
+  app-prod = "10.0.4.0/24",
+  app-dev = "10.0.5.0/24"
+}
+
+gke_pod_network_subnets = {
+  cicd = "10.3.0.0/17",
+  app-prod = "10.4.0.0/17",
+  app-dev = "10.5.0.0/17"
+}
+
+gke_service_network_subnets = {
+  cicd = "10.3.128.0/20",
+  app-prod = "10.4.128.0/20",
+  app-dev = "10.5.128.0/20"
+}
+
+router_nat_name = "shared-nat"
+
+router_name = "shared-router"
